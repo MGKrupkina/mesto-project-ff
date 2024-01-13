@@ -21,7 +21,9 @@ function createCard(card, deleteButton) {
 // @todo: Вывести карточки на страницу
 
 const photoContent = initialCards.map((card) => createCard(card, deleteCard));
-  photoContent.forEach((card) => {cardsContainer.append(card);
+
+photoContent.forEach((card) => {
+    cardsContainer.append(card);
 });
 
 // @todo: Функция удаления карточки
