@@ -3,7 +3,7 @@ export { createCard, deletePhoto, likeIcon };
 
 // @todo: Темплейт карточки
 
-const cardTemplate = document.querySelector('#card-template').content;
+const cardTemplate = document.querySelector('#card-template').content.querySelector('.card');
 
 // @todo: Функция создания карточки
 
@@ -11,28 +11,26 @@ function createCard(card, deletePhoto, likeIcon, mestoImage) {
 
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector('.card__image');
-  const template = cardElement.querySelector('.card');
   const likeButton = cardElement.querySelector('.card__like-button');
-  const deleteButton = cardElement.querySelector('.card__delete-button');
+  likeButton.addEventListener('click', () => likeIcon(likeButton));
   cardImage.src = card.link;
   cardImage.alt = card.name;
-  cardElement.querySelector(".card__title").textContent = card.name;
-  deleteButton.addEventListener('click', () => deletePhoto(template));
-  likeButton.addEventListener('click', () => likeIcon(likeButton));
   cardImage.addEventListener('click', () => mestoImage(card));
-
+  cardElement.querySelector(".card__title").textContent = card.name;
+  cardElement.querySelector('.card__delete-button').addEventListener('click', (event) => {deletePhoto(event);
+  });
   return cardElement;
 }
 
 // @todo: Delete photo
-function deletePhoto(template) {
-  template.remove();
-} 
+
+function deletePhoto(event) {
+  const parent = event.target.parentElement;
+  parent.remove();
+}
 
 // @todo: LikeIcon
+
 function likeIcon(likeButton) {
   likeButton.classList.toggle('card__like-button_is-active')
 }
-
-
-
