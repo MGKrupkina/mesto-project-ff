@@ -258,8 +258,8 @@ function deletePhotoCard (event) {
   const cardId = buttonForDelete.dataset.cardId;
   deleteCardFromServer(cardId)
   .then(() => {
+    const deleteTarget = document.querySelector(`[id='${cardId}']`);
     deleteTarget.remove();
-    const deleteTarget = buttonForDelete.closest(".element");
     //buttonForDelete.dataset.cardId = "";
     closeModal(popupDeleteCard);
 })
