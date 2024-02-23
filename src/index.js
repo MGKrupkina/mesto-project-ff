@@ -78,8 +78,8 @@ const popupTypeCaption = popupType.querySelector(".popup__caption");
 
 // Константы для попапа с вопросом по удалению карточки
 
-const popupDeleteCard = document.querySelector(".popup__delete-card");
-const formForDelete = popupDeleteCard.querySelector(".popup__form");
+const popupDeleteCard = document.querySelector(".popup__delete-card"); 
+const formForDelete = document.forms["delete-card"];
 const buttonForDelete = formForDelete.querySelector(".popup__button");
 
 // Реализация функционала по лайку и удалению карточек
@@ -248,21 +248,22 @@ popupFormAvatar.addEventListener("submit", submitChangeAvatar);
 
 // ЗАПРОС НА УДАЛЕНИЕ КАРТОЧКИ //
 
-const openDeletePopup = (id) => {
-  buttonForDelete.dataset.id = id;
-  openModal(popupDeleteCard);
+function openDeletePopup(cardId) {
+ buttonForDelete.dataset.cardId = cardId;
+ openModal(popupDeleteCard);
 };
 
 function deletePhotoCard (event) {
-  event.preventDefault();
-  const cardId = buttonForDelete.dataset.id;
+ event.preventDefault();
+  const cardId = buttonForDelete.dataset.cardId;
   deleteCardFromServer(cardId)
-    .then(() => {
-      deleteTarget.remove();
-      const deleteTarget = deleteButton.closest(".element");
-      closeModal(popupDeleteCard);
-  })
-  .catch(console.error);
+  .then(() => {
+    deleteTarget.remove();
+    const deleteTarget = buttonForDelete.closest(".element");
+    //buttonForDelete.dataset.cardId = "";
+    closeModal(popupDeleteCard);
+})
+ .catch(console.error);
 };
 
 formForDelete.addEventListener("submit", deletePhotoCard);
