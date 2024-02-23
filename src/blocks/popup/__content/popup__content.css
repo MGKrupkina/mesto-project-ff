@@ -17,3 +17,12 @@
     padding: 30px 20px;
   }
 }
+
+
+.style__edit-avatar {
+  min-height: 272px;
+}
+
+.style__delete-card {
+  min-height: 181px;
+}
