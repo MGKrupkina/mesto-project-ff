@@ -26,7 +26,7 @@ export function createCard(cardData, mestoImage, likeIcon, deletePhoto, userId) 
   cardLikeCounter.textContent = cardData.likes.length;
  
   // @todo: Условия для удаления карточки
-
+  
   if (cardData.owner["_id"] != userId) {
     cardDeleteButton.style.display = "none";
   } else {

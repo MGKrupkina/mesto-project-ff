@@ -25,7 +25,7 @@ const validationConfig = {
 };
 
 enableValidation(validationConfig);
-getInitialCards();
+//getInitialCards();
 
 // Находим форму в DOM
 // Воспользуйтесь методом querySelector()

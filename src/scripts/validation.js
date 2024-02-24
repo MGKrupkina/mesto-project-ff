@@ -89,11 +89,7 @@ export function clearValidation(formElement, settings) {
 export function enableValidation(settings) {
   const forms = document.querySelectorAll(settings.formSelector);
   forms.forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-    });
-
-    const inputs = Array.from(form.querySelectorAll(settings.inputSelector));
+  const inputs = Array.from(form.querySelectorAll(settings.inputSelector));
     inputs.forEach((onInput) => {
       onInput.addEventListener("input", () => {
         checkInputValidity(onInput, settings);
@@ -117,6 +113,8 @@ export function enableValidation(settings) {
       inputs,
       form.querySelector(settings.submitButtonSelector),
       settings
-    );
-  });
-}
+      );
+    }); 
+  } 
+  
+   

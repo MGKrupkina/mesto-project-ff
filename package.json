@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rd -rf dist && webpack --mode production",
+    "build": "webpack --mode production",
     "dev": "webpack serve",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -32,3 +32,7 @@
     "core-js": "^3.33.1"
   }
 }
+
+
+
+ 
