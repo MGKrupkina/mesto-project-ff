@@ -18,6 +18,7 @@ html-страница сайта (<a href="https://github.com/MGKrupkina/mesto-p
 
 
 <a href="https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?type=design&node-id=0-1&mode=design" target="_blank">Макет 1 (перейти по ссылке)</a>
+
 <a href="https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?type=design&node-id=0-1&mode=design" target="_blank">Макет 2 (перейти по ссылке)</a>
 
 ![screenshot_desktop](https://github.com/MGKrupkina/mesto-project-ff/assets/145542673/c3673ba3-0db4-4d64-b938-9d92563c60c2)
