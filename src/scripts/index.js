@@ -1,16 +1,16 @@
-import "./pages/index.css";
+import "../pages/index.css";
 
-import { createCard, handleLikeClick 
-} from "./scripts/card.js";
+import { createCard, handleLikeClick
+} from "./card.js";
 
 import { openModal,closeModal
-} from "./scripts/modal.js";
+} from "./modal.js";
 
 import { enableValidation, clearValidation 
-} from "./scripts/validation.js";
+} from "./validation.js";
 
 import { getInitialCards, uploadCard, updateProfileInfo, deleteCardFromServer, setProfileInfo, putAvatar
-} from "./scripts/api.js";
+} from "./api.js";
 
 // Включение валидации вызовом enableValidation
 // Все настройки передаются при вызове
@@ -247,24 +247,25 @@ userAvatar.addEventListener("click", () => {
 popupFormAvatar.addEventListener("submit", submitChangeAvatar);
 
 // ЗАПРОС НА УДАЛЕНИЕ КАРТОЧКИ //
+// функция удаления карточки по кнопке из попапа удаления buttonForDelete
 
 function openDeletePopup(cardId) {
- buttonForDelete.dataset.cardId = cardId;
+buttonForDelete.dataset.cardId = cardId;
  openModal(popupDeleteCard);
-};
-
-function deletePhotoCard (event) {
- event.preventDefault();
-  const cardId = buttonForDelete.dataset.cardId;
-  deleteCardFromServer(cardId)
-  .then(() => {
-    const deleteTarget = document.querySelector(`[id='${cardId}']`);
-    deleteTarget.remove();
-    //buttonForDelete.dataset.cardId = "";
-    closeModal(popupDeleteCard);
-})
- .catch(console.error);
-};
+ };
+ 
+ function deletePhotoCard (event) {
+  event.preventDefault();
+   const cardId = buttonForDelete.dataset.cardId;
+   deleteCardFromServer(cardId)
+   .then(() => {
+     const deleteTarget = document.querySelector(`[id='${cardId}']`);
+     deleteTarget.remove();
+     //buttonForDelete.dataset.cardId = "";
+     closeModal(popupDeleteCard);
+ })
+  .catch(console.error);
+ };
 
 formForDelete.addEventListener("submit", deletePhotoCard);
 buttonForDelete.addEventListener("click", popupDeleteCard);

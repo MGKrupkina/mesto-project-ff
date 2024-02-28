@@ -4,11 +4,11 @@
 //validation.js
 
 function isNameValid(name) {
-  return /^[A-Za-zА-Яа-яЁё\s-]*$/.test(name);
+  return /[A-Za-zА-Яа-яЁё\s-]*$/.test(name);
 }
 
 function isDescriptionValid(description) {
-  return /^[A-Za-zА-Яа-яЁё\s-]*$/.test(description);
+  return /[A-Za-zА-Яа-яЁё\s-]*$/.test(description);
 }
 
 function setCustomValidity(onInput) {

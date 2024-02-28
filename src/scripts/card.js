@@ -1,6 +1,6 @@
 // @todo: Темплейт карточки
 
-import { putLikeCard, putDislikeCard } from "./api.js";
+import { putLikeCard, putDislikeCard } from "./api";
 
 // @todo: Темплейт карточки
 
@@ -24,9 +24,10 @@ export function createCard(cardData, mestoImage, likeIcon, deletePhoto, userId) 
   cardImage.src = cardData.link;
   cardImage.alt = cardData.name;
   cardLikeCounter.textContent = cardData.likes.length;
- 
+
   // @todo: Условия для удаления карточки
-  
+  //обработка клика по корзинке удаления карточки cardDeleteButton
+
   if (cardData.owner["_id"] != userId) {
     cardDeleteButton.style.display = "none";
   } else {
@@ -34,10 +35,6 @@ export function createCard(cardData, mestoImage, likeIcon, deletePhoto, userId) 
       deletePhoto(cardElement.id);
     });
   }
-
-  //function getTemplate() {
-  //  return cardTemplate.cloneNode(true);
- // }
 
   // @todo: Условия для проставления лайка на карточке с поиском айди
   // закрашиваем лайк при условии, что мы поставили лайк, присутствует id пользователя
@@ -70,3 +67,5 @@ export function createCard(cardData, mestoImage, likeIcon, deletePhoto, userId) 
       .catch(console.error);
   }
 };
+
+
