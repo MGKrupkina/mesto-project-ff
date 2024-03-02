@@ -30,7 +30,7 @@
 
 html-страница сайта (<a href="https://github.com/NazarovaMary/mesto-project-ff/blob/main/src/index.html" target="_blank">index.html</a>)
 
-стили (<a href="https://github.com/NazarovaMary/mesto-project-ff/tree/main/src/blocks/card" target="_blank">styles.css</a>)
+стили (<a href="https://github.com/NazarovaMary/mesto-project-ff/tree/main/src/blocks" target="_blank">styles.css</a>)
 
 скрипты (<a href="https://github.com/NazarovaMary/mesto-project-ff/tree/main/src/scripts" target="_blank">scripts</a>)
 
